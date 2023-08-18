@@ -1,0 +1,1031 @@
+@prefix : <http://emmo.info/emmo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://emmo.info/emmo/application/reaxpro-electronic-atomistic-model> .
+
+<http://emmo.info/emmo/application/reaxpro-electronic-atomistic-model> rdf:type owl:Ontology ;
+                                                                        owl:imports <http://emmo.info/emmo/application/reaxpro-core> ;
+                                                                        dcterms:abstract "The core module of an EMMO-based application ontology applied to ReaxPro framework"@en ;
+                                                                        dcterms:contributor "Fraunhofer IWM" ,
+                                                                                            "Netherlands eScience Center" ;
+                                                                        dcterms:creator "Joana Francisco Morgado" ,
+                                                                                        "Pablo Lopez-Tarifa" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://emmo.info/emmo#EMMO_5525a055_dda5_4556_8b91_f0d22fa676cc
+:EMMO_5525a055_dda5_4556_8b91_f0d22fa676cc rdf:type owl:AnnotationProperty .
+
+
+###  http://emmo.info/emmo#EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9
+:EMMO_967080e5_2f42_4eb2_a3a9_c58143e835f9 rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://emmo.info/emmo#EMMO_fdf9609a_4b04_4b07_8461_d449b3a93c46
+:EMMO_fdf9609a_4b04_4b07_8461_d449b3a93c46 rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf :EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe ;
+                                           skos:prefLabel "hasBasisSet"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://emmo.info/atomistic/atomistic#EMMO_aabf5735_3acb_4144_b97f_0ccc041f1b2f
+<http://emmo.info/atomistic/atomistic#EMMO_aabf5735_3acb_4144_b97f_0ccc041f1b2f> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf :EMMO_6eca09be_17e9_445e_abc9_000aa61b7a11 ,
+                                                                                                 :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ,
+                                                                                                 [ rdf:type owl:Restriction ;
+                                                                                                   owl:onProperty :EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe ;
+                                                                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                   owl:onClass :EMMO_ed03c345_bcfa_4f84_a10a_2e03902049b5
+                                                                                                 ] ;
+                                                                                 skos:prefLabel "DFTModel" .
+
+
+###  http://emmo.info/emmo#EMMO_078e9be6_9fe2_48f1_b768_3883024b5fc3
+:EMMO_078e9be6_9fe2_48f1_b768_3883024b5fc3 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_a39d8cf5_df30_40e1_964b_4343af8738ac ;
+                                           skos:prefLabel "OptimizedMolecularGeometry"@en .
+
+
+###  http://emmo.info/emmo#EMMO_0f542146_06f0_4387_b4d2_6e20cff83fac
+:EMMO_0f542146_06f0_4387_b4d2_6e20cff83fac rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_8681074a_e225_4e38_b586_e85b0f43ce38 ;
+                                           skos:prefLabel "AtomisticModellingSoftware"@en .
+
+
+###  http://emmo.info/emmo#EMMO_0f6c9c2e_aa31_455e_bfd4_81629e297331
+:EMMO_0f6c9c2e_aa31_455e_bfd4_81629e297331 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_54dc83cb_06e1_4739_9e45_bc09cead7f48 ,
+                                                           :EMMO_e16512ea_7c51_4e7e_bd35_ca3a74f9c7f4 ;
+                                           skos:prefLabel "CheckSymmetry"@en .
+
+
+###  http://emmo.info/emmo#EMMO_105997e4_9f47_4672_bca3_ddfe00cdbf24
+:EMMO_105997e4_9f47_4672_bca3_ddfe00cdbf24 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_3313d5ff_d209_40d5_a000_fc6a56fa1478 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_129e88a6_9847_4e2e_b26d_c7f39cc2fc62 ;
+                                                             owl:someValuesFrom :EMMO_a39d8cf5_df30_40e1_964b_4343af8738ac
+                                                           ] ;
+                                           skos:prefLabel "VibrationalFrequencyCalculationII"@en .
+
+
+###  http://emmo.info/emmo#EMMO_12a9e8ca_96e2_47aa_9c00_82087af26a45
+:EMMO_12a9e8ca_96e2_47aa_9c00_82087af26a45 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_3b645426_e74c_4847_99f0_fdc293f03e32 ;
+                                           skos:prefLabel "ConvergenceCutoff"@en .
+
+
+###  http://emmo.info/emmo#EMMO_175e6df5_7b05_4a81_9d6c_3824e1270c97
+:EMMO_175e6df5_7b05_4a81_9d6c_3824e1270c97 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_d6147403_0eb2_4efa_ac1c_d11ceccf5cc4 ;
+                                           skos:prefLabel "ProcessSearch"@en .
+
+
+###  http://emmo.info/emmo#EMMO_1925adbe_e070_4006_93d5_e00e7eed23be
+:EMMO_1925adbe_e070_4006_93d5_e00e7eed23be rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_3b645426_e74c_4847_99f0_fdc293f03e32 ;
+                                           skos:prefLabel "ForceFieldIdentifierString"@en .
+
+
+###  http://emmo.info/emmo#EMMO_1a2bcb93_8322_4ef8_8afa_ed73536f6630
+:EMMO_1a2bcb93_8322_4ef8_8afa_ed73536f6630 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_d6df3642_5ef2_49fb_9eeb_26f34a6ef380 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_0ec50973_7903_4809_abd7_414bb27ee186 ;
+                                                             owl:someValuesFrom :EMMO_70f2d4c2_c86e_46de_b509_967b6fc8818c
+                                                           ] ;
+                                           skos:prefLabel "GeometryOptimizationI"@en .
+
+
+###  http://emmo.info/emmo#EMMO_1ba68b17_7ac3_4924_93e9_beeb2bf86a74
+:EMMO_1ba68b17_7ac3_4924_93e9_beeb2bf86a74 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_d6147403_0eb2_4efa_ac1c_d11ceccf5cc4 ;
+                                           skos:prefLabel "BasinHopping"@en .
+
+
+###  http://emmo.info/emmo#EMMO_1e99c727_507d_4069_9d7f_83c9fdc61925
+:EMMO_1e99c727_507d_4069_9d7f_83c9fdc61925 rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo#EMMO_220e2df2_a183_421c_b1e4_de7a3e8cb53a
+:EMMO_220e2df2_a183_421c_b1e4_de7a3e8cb53a rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_c7d613a7_e8fe_4783_a0d3_3ae953ea018f ;
+                                           skos:prefLabel "CoarseGrained"@en .
+
+
+###  http://emmo.info/emmo#EMMO_22a775b4_2a60_423b_aab6_b90703e13b04
+:EMMO_22a775b4_2a60_423b_aab6_b90703e13b04 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_ec3f2da5_d51d_4dde_9a2a_550003f9e84a ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_23b579e1_8088_45b5_9975_064014026c42 ;
+                                                             owl:hasValue "B3LYP"
+                                                           ] ;
+                                           skos:prefLabel "B3LYP"@en .
+
+
+###  http://emmo.info/emmo#EMMO_230e6a69_d246_4289_85e5_8126e9615a5a
+:EMMO_230e6a69_d246_4289_85e5_8126e9615a5a rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_28cb6cce_8e1a_4caa_8d20_87ffc3a4c34d ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_b9a8e7cd_2003_4549_bf74_ae46652aeb67 ;
+                                                             owl:someValuesFrom :EMMO_e23b2800_3237_42b0_a273_1a2efebef3aa
+                                                           ] ;
+                                           rdfs:comment "Single-zeta STO basis sets without polarization." ;
+                                           skos:prefLabel "SingleZeta"@en .
+
+
+###  http://emmo.info/emmo#EMMO_235d39d5_e88d_482a_980a_df5a09ff73e1
+:EMMO_235d39d5_e88d_482a_980a_df5a09ff73e1 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2 ,
+                                                           :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ;
+                                           rdfs:comment """In the field of Catalysis, the FormationEnergy is referred to the energy released in the production of a gas-phase species. 
+E.g.: Given a reaction A* + B* -> AB(gas), the corresponding 
+FormationEnergy_AB = TotalElectronicEnergy_AB - (TotalElectronicEnergy_A + TotalElectronicEnergy_B)""" ;
+                                           skos:prefLabel "FormationEnergy"@en .
+
+
+###  http://emmo.info/emmo#EMMO_25f8fa70_d036_472e_b157_32fb96de7ca3
+:EMMO_25f8fa70_d036_472e_b157_32fb96de7ca3 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_a39d8cf5_df30_40e1_964b_4343af8738ac ;
+                                           skos:prefLabel "TransitionStateGeometry"@en .
+
+
+###  http://emmo.info/emmo#EMMO_2781c835_f883_4aa2_bf5d_cf27949c07a0
+:EMMO_2781c835_f883_4aa2_bf5d_cf27949c07a0 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_057e7d57_aff0_49de_911a_8861d85cef40 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_23b579e1_8088_45b5_9975_064014026c42 ;
+                                                             owl:allValuesFrom xsd:string
+                                                           ] ;
+                                           skos:prefLabel "Region"@en .
+
+
+###  http://emmo.info/emmo#EMMO_28cb6cce_8e1a_4caa_8d20_87ffc3a4c34d
+:EMMO_28cb6cce_8e1a_4caa_8d20_87ffc3a4c34d rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_b224f193_874a_4381_ae83_0e8f35f86f81 ;
+                                           skos:prefLabel "SlaterTypeOrbital"@en .
+
+
+###  http://emmo.info/emmo#EMMO_293c1d14_b6d9_48d2_96c6_8875da690cce
+:EMMO_293c1d14_b6d9_48d2_96c6_8875da690cce rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_b1593b2b_09fb_4e8e_9359_ac65b452738d ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_23b579e1_8088_45b5_9975_064014026c42 ;
+                                                             owl:hasValue "DZ"
+                                                           ] ;
+                                           skos:prefLabel "DZ"@en .
+
+
+###  http://emmo.info/emmo#EMMO_29538c18_b0e7_4ef4_b900_fc8cd3d5abeb
+:EMMO_29538c18_b0e7_4ef4_b900_fc8cd3d5abeb rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_ed03c345_bcfa_4f84_a10a_2e03902049b5 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_b9a8e7cd_2003_4549_bf74_ae46652aeb67 ;
+                                                             owl:someValuesFrom :EMMO_da9b1913_a685_441f_80de_44a550841416
+                                                           ] ;
+                                           rdfs:comment """Local Density Approximation exchange and correlation functional. We refer to the “Xα method” proposed by Slater.
+J. Slater, Phys. Rev. 81, 385 (1951).""" ;
+                                           skos:prefLabel "LocalDensityApproximation"@en .
+
+
+###  http://emmo.info/emmo#EMMO_2b7aa3f3_2e3d_447b_8aeb_342a7c42dd7d
+:EMMO_2b7aa3f3_2e3d_447b_8aeb_342a7c42dd7d rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_790d1d4e_15cc_4e55_b5da_9e2efceecd4f ,
+                                                           :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_129e88a6_9847_4e2e_b26d_c7f39cc2fc62 ;
+                                                             owl:someValuesFrom :EMMO_c7d613a7_e8fe_4783_a0d3_3ae953ea018f
+                                                           ] ;
+                                           skos:prefLabel "AtomisticCalculation"@en .
+
+
+###  http://emmo.info/emmo#EMMO_2f844143_88d5_44d7_ba93_b6caba8532ef
+:EMMO_2f844143_88d5_44d7_ba93_b6caba8532ef rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_b224f193_874a_4381_ae83_0e8f35f86f81 ;
+                                           skos:prefLabel "PlaneWaveBasisSet"@en .
+
+
+###  http://emmo.info/emmo#EMMO_3035ad7c_d1bc_48d2_b2f4_5b8f00457ba1
+:EMMO_3035ad7c_d1bc_48d2_b2f4_5b8f00457ba1 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_c7d613a7_e8fe_4783_a0d3_3ae953ea018f ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_b9a8e7cd_2003_4549_bf74_ae46652aeb67 ;
+                                                             owl:someValuesFrom :EMMO_e34a0117_065d_4a45_8e6e_28e35143836a
+                                                           ] ;
+                                           skos:prefLabel "Reactive"@en .
+
+
+###  http://emmo.info/emmo#EMMO_3075edd8_7194_4ca1_b1de_004678d5dcec
+:EMMO_3075edd8_7194_4ca1_b1de_004678d5dcec rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_c7d613a7_e8fe_4783_a0d3_3ae953ea018f ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_b9a8e7cd_2003_4549_bf74_ae46652aeb67 ;
+                                                             owl:someValuesFrom :EMMO_fd6ce1ae_f92a_4d38_b5d3_ed8f3c77f615
+                                                           ] ;
+                                           skos:prefLabel "Polarizable"@en .
+
+
+###  http://emmo.info/emmo#EMMO_3313d5ff_d209_40d5_a000_fc6a56fa1478
+:EMMO_3313d5ff_d209_40d5_a000_fc6a56fa1478 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_2b7aa3f3_2e3d_447b_8aeb_342a7c42dd7d ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_0ec50973_7903_4809_abd7_414bb27ee186 ;
+                                                             owl:someValuesFrom :EMMO_4d1e1e27_3bb0_4b66_bb3d_7684c5eef194
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_0ec50973_7903_4809_abd7_414bb27ee186 ;
+                                                             owl:someValuesFrom :EMMO_7ba72622_3713_46e4_be83_c1de26f1db68
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_0ec50973_7903_4809_abd7_414bb27ee186 ;
+                                                             owl:someValuesFrom :EMMO_de4ef9d3_53b9_4472_8131_7ea9e84360f3
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_0ec50973_7903_4809_abd7_414bb27ee186 ;
+                                                             owl:someValuesFrom :EMMO_e362df3b_b5f0_4726_93a3_8735efa72372
+                                                           ] ;
+                                           rdfs:comment "Normal mode calculations of an atom disposition." ;
+                                           skos:prefLabel "VibrationalFrequencyCalculation"@en .
+
+
+###  http://emmo.info/emmo#EMMO_3918ba90_0b4a_49c7_97fa_2cee6bf8bd54
+:EMMO_3918ba90_0b4a_49c7_97fa_2cee6bf8bd54 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_c7100a8c_407a_4dad_8881_827b76851ef8 ;
+                                           skos:prefLabel "WavefunctionOptimizationI"@en .
+
+
+###  http://emmo.info/emmo#EMMO_3b2f987d_140f_4fe4_bcfa_3adfa042c7c3
+:EMMO_3b2f987d_140f_4fe4_bcfa_3adfa042c7c3 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2 ,
+                                                           :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ;
+                                           rdfs:comment "Kinetic energy of the electrons." ;
+                                           skos:prefLabel "ElectronKineticEnergy"@en .
+
+
+###  http://emmo.info/emmo#EMMO_3b645426_e74c_4847_99f0_fdc293f03e32
+:EMMO_3b645426_e74c_4847_99f0_fdc293f03e32 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_5a72c6eb_cbff_45c6_a10c_8f3a7f9adb19 ;
+                                           skos:prefLabel "ElectronicAtomisticModellingConcept"@en .
+
+
+###  http://emmo.info/emmo#EMMO_3e7ade72_f15d_4c56_bfc6_9188c5428011
+:EMMO_3e7ade72_f15d_4c56_bfc6_9188c5428011 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_c7100a8c_407a_4dad_8881_827b76851ef8 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_129e88a6_9847_4e2e_b26d_c7f39cc2fc62 ;
+                                                             owl:someValuesFrom :EMMO_a39d8cf5_df30_40e1_964b_4343af8738ac
+                                                           ] ;
+                                           skos:prefLabel "WavefunctionOptimizationII"@en .
+
+
+###  http://emmo.info/emmo#EMMO_3f99bde1_d3f5_480b_8932_3a1926638cd2
+:EMMO_3f99bde1_d3f5_480b_8932_3a1926638cd2 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_d6df3642_5ef2_49fb_9eeb_26f34a6ef380 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_0ec50973_7903_4809_abd7_414bb27ee186 ;
+                                                             owl:someValuesFrom :EMMO_078e9be6_9fe2_48f1_b768_3883024b5fc3
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_129e88a6_9847_4e2e_b26d_c7f39cc2fc62 ;
+                                                             owl:someValuesFrom :EMMO_a39d8cf5_df30_40e1_964b_4343af8738ac
+                                                           ] ;
+                                           skos:prefLabel "GeometryOptimizationII"@en .
+
+
+###  http://emmo.info/emmo#EMMO_3faf22c5_c974_4d86_8d7b_cc3ae23b7e80
+:EMMO_3faf22c5_c974_4d86_8d7b_cc3ae23b7e80 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_1925adbe_e070_4006_93d5_e00e7eed23be ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_23b579e1_8088_45b5_9975_064014026c42 ;
+                                                             owl:hasValue "OPLS-AA"
+                                                           ] ;
+                                           skos:prefLabel "OPLSAA"@en .
+
+
+###  http://emmo.info/emmo#EMMO_4760f491_43c0_40d6_8742_3c728d47a3d6
+:EMMO_4760f491_43c0_40d6_8742_3c728d47a3d6 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_e2551665_75f0_4f9e_b07e_1cf8643b3ab4 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_129e88a6_9847_4e2e_b26d_c7f39cc2fc62 ;
+                                                             owl:someValuesFrom :EMMO_a39d8cf5_df30_40e1_964b_4343af8738ac
+                                                           ] ;
+                                           skos:prefLabel "StationaryPointCalculationI"@en .
+
+
+###  http://emmo.info/emmo#EMMO_4cb59b3a_a05d_4969_b231_d3f32225b85c
+:EMMO_4cb59b3a_a05d_4969_b231_d3f32225b85c rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_b1593b2b_09fb_4e8e_9359_ac65b452738d ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_23b579e1_8088_45b5_9975_064014026c42 ;
+                                                             owl:hasValue "DZP"
+                                                           ] ;
+                                           skos:prefLabel "DZP"@en .
+
+
+###  http://emmo.info/emmo#EMMO_4d1e1e27_3bb0_4b66_bb3d_7684c5eef194
+:EMMO_4d1e1e27_3bb0_4b66_bb3d_7684c5eef194 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2 ,
+                                                           :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ;
+                                           skos:prefLabel "ZeroPointEnergy"@en .
+
+
+###  http://emmo.info/emmo#EMMO_50c988ec_4d6a_45e4_abbf_d46a0507ee72
+:EMMO_50c988ec_4d6a_45e4_abbf_d46a0507ee72 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_2486d1a0_a11b_4250_92f6_59ba8886473f ;
+                                           skos:prefLabel "ReactionPathway"@en .
+
+
+###  http://emmo.info/emmo#EMMO_51530002_becc_47d2_92d7_51380a8eaf7a
+:EMMO_51530002_becc_47d2_92d7_51380a8eaf7a rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_0f542146_06f0_4387_b4d2_6e20cff83fac ;
+                                           rdfs:comment "Long timescale dynamics code https://theory.cm.utexas.edu/eon/index.html" ;
+                                           skos:prefLabel "EON"@en .
+
+
+###  http://emmo.info/emmo#EMMO_553fb3fe_2b8e_4129_ab05_ae4c5ba5edb5
+:EMMO_553fb3fe_2b8e_4129_ab05_ae4c5ba5edb5 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2 ,
+                                                           :EMMO_9022539d_3eda_4cf1_ba10_a93bb946d9b6 ;
+                                           skos:prefLabel "MaximumEnergy"@en .
+
+
+###  http://emmo.info/emmo#EMMO_571d7e61_80d2_452e_ac44_3a2a739464d7
+:EMMO_571d7e61_80d2_452e_ac44_3a2a739464d7 rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo#EMMO_5ec73879_62d7_492b_a6c7_935e3daa8f47
+:EMMO_5ec73879_62d7_492b_a6c7_935e3daa8f47 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2 ,
+                                                           :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ;
+                                           rdfs:comment "Energy provided by the electrons of the system. It adds ElectronKineticEnergy, Electron-Electron and Electron-Nuclei terms." ;
+                                           skos:prefLabel "TotalElectronicEnergy"@en .
+
+
+###  http://emmo.info/emmo#EMMO_5f9389ac_4768_4ace_a66f_4e26da2f5718
+:EMMO_5f9389ac_4768_4ace_a66f_4e26da2f5718 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_3313d5ff_d209_40d5_a000_fc6a56fa1478 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_129e88a6_9847_4e2e_b26d_c7f39cc2fc62 ;
+                                                             owl:someValuesFrom :EMMO_a39d8cf5_df30_40e1_964b_4343af8738ac
+                                                           ] ;
+                                           skos:prefLabel "VibrationalFrequencyCalculationI"@en .
+
+
+###  http://emmo.info/emmo#EMMO_62297243_ec84_47ba_8669_7b5ee7f548e5
+:EMMO_62297243_ec84_47ba_8669_7b5ee7f548e5 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_790d1d4e_15cc_4e55_b5da_9e2efceecd4f ,
+                                                           :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_129e88a6_9847_4e2e_b26d_c7f39cc2fc62 ;
+                                                             owl:someValuesFrom :EMMO_12a9e8ca_96e2_47aa_9c00_82087af26a45
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_c5aae418_1622_4d02_93c5_21159e28e6c1 ;
+                                                             owl:someValuesFrom :EMMO_8ecc21ad_5d42_4e6b_8c36_c95c666d6c1a
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_129e88a6_9847_4e2e_b26d_c7f39cc2fc62 ;
+                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass :EMMO_b1593b2b_09fb_4e8e_9359_ac65b452738d
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_129e88a6_9847_4e2e_b26d_c7f39cc2fc62 ;
+                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass :EMMO_ec3f2da5_d51d_4dde_9a2a_550003f9e84a
+                                                           ] ;
+                                           skos:prefLabel "ElectronicCalculation"@en .
+
+
+###  http://emmo.info/emmo#EMMO_6535571a_fa0f_47da_ac63_9d7180475aa3
+:EMMO_6535571a_fa0f_47da_ac63_9d7180475aa3 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_9022539d_3eda_4cf1_ba10_a93bb946d9b6 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_23b579e1_8088_45b5_9975_064014026c42 ;
+                                                             owl:someValuesFrom xsd:string
+                                                           ] ;
+                                           skos:prefLabel "FixedRegion"@en .
+
+
+###  http://emmo.info/emmo#EMMO_6ac887fc_010d_4c43_bfb8_8d85f8c579c4
+:EMMO_6ac887fc_010d_4c43_bfb8_8d85f8c579c4 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_e2551665_75f0_4f9e_b07e_1cf8643b3ab4 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_129e88a6_9847_4e2e_b26d_c7f39cc2fc62 ;
+                                                             owl:someValuesFrom :EMMO_a39d8cf5_df30_40e1_964b_4343af8738ac
+                                                           ] ;
+                                           skos:prefLabel "StationaryPointCalculationII"@en .
+
+
+###  http://emmo.info/emmo#EMMO_70f2d4c2_c86e_46de_b509_967b6fc8818c
+:EMMO_70f2d4c2_c86e_46de_b509_967b6fc8818c rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://emmo.info/domain-crystallography/crystallography#EMMO_6a340d67_c6cb_4348_8537_d9aa0e768721> ,
+                                                           :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ;
+                                           skos:prefLabel "OptimizedCrystalStructure"@en .
+
+
+###  http://emmo.info/emmo#EMMO_7130a935_f8be_4623_b2ca_cb2d952215ed
+:EMMO_7130a935_f8be_4623_b2ca_cb2d952215ed rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_d8d2144e_5c8d_455d_a643_5caf4d8d9df8 ;
+                                           skos:prefLabel "ReferenceSet"@en .
+
+
+###  http://emmo.info/emmo#EMMO_733be4cb_93c9_43af_a38c_8df9c95cdbc0
+:EMMO_733be4cb_93c9_43af_a38c_8df9c95cdbc0 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_c7d613a7_e8fe_4783_a0d3_3ae953ea018f ;
+                                           skos:prefLabel "MachineLearningBased"@en .
+
+
+###  http://emmo.info/emmo#EMMO_7448d633_92c8_4a3a_9c23_2ff2544c1b29
+:EMMO_7448d633_92c8_4a3a_9c23_2ff2544c1b29 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_1925adbe_e070_4006_93d5_e00e7eed23be ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_23b579e1_8088_45b5_9975_064014026c42 ;
+                                                             owl:hasValue "OPLS"
+                                                           ] ;
+                                           skos:prefLabel "OPLS"@en .
+
+
+###  http://emmo.info/emmo#EMMO_75ae1f00_41eb_4e8d_84f6_971ee3dc3c49
+:EMMO_75ae1f00_41eb_4e8d_84f6_971ee3dc3c49 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_c7d613a7_e8fe_4783_a0d3_3ae953ea018f ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_b9a8e7cd_2003_4549_bf74_ae46652aeb67 ;
+                                                             owl:someValuesFrom :EMMO_3faf22c5_c974_4d86_8d7b_cc3ae23b7e80
+                                                           ] ;
+                                           skos:prefLabel "Classical"@en .
+
+
+###  http://emmo.info/emmo#EMMO_76885910_8001_4043_8a93_ba4de77781ea
+:EMMO_76885910_8001_4043_8a93_ba4de77781ea rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_12a9e8ca_96e2_47aa_9c00_82087af26a45 ;
+                                           skos:prefLabel "TotalElectronicEnergyCutoff"@en .
+
+
+###  http://emmo.info/emmo#EMMO_7771f4ff_ee07_4930_a8b1_5e4bb35e8585
+:EMMO_7771f4ff_ee07_4930_a8b1_5e4bb35e8585 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_d6df3642_5ef2_49fb_9eeb_26f34a6ef380 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_0ec50973_7903_4809_abd7_414bb27ee186 ;
+                                                             owl:someValuesFrom :EMMO_078e9be6_9fe2_48f1_b768_3883024b5fc3
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_0ec50973_7903_4809_abd7_414bb27ee186 ;
+                                                             owl:someValuesFrom :EMMO_70f2d4c2_c86e_46de_b509_967b6fc8818c
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_129e88a6_9847_4e2e_b26d_c7f39cc2fc62 ;
+                                                             owl:someValuesFrom :EMMO_a39d8cf5_df30_40e1_964b_4343af8738ac
+                                                           ] ;
+                                           skos:prefLabel "GeometryOptimizationIII"@en .
+
+
+###  http://emmo.info/emmo#EMMO_790d1d4e_15cc_4e55_b5da_9e2efceecd4f
+:EMMO_790d1d4e_15cc_4e55_b5da_9e2efceecd4f rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo#EMMO_7b0a5ee0_5c27_453c_b523_1d73acc74da2
+:EMMO_7b0a5ee0_5c27_453c_b523_1d73acc74da2 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_28cb6cce_8e1a_4caa_8d20_87ffc3a4c34d ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_b9a8e7cd_2003_4549_bf74_ae46652aeb67 ;
+                                                             owl:someValuesFrom :EMMO_293c1d14_b6d9_48d2_96c6_8875da690cce
+                                                           ] ;
+                                           rdfs:comment "" ,
+                                                        "Double-zeta STO basis sets without polarization functions" ;
+                                           skos:prefLabel "DoubleZeta"@en .
+
+
+###  http://emmo.info/emmo#EMMO_7ba72622_3713_46e4_be83_c1de26f1db68
+:EMMO_7ba72622_3713_46e4_be83_c1de26f1db68 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ,
+                                                           :EMMO_cd2cd0de_e0cc_4ef1_b27e_2e88db027bac ;
+                                           skos:prefLabel "Displacement"@en .
+
+
+###  http://emmo.info/emmo#EMMO_80389bd5_15c7_470f_9177_2be60d362e00
+:EMMO_80389bd5_15c7_470f_9177_2be60d362e00 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_1925adbe_e070_4006_93d5_e00e7eed23be ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_23b579e1_8088_45b5_9975_064014026c42 ;
+                                                             owl:hasValue "ANAKIN-ME"
+                                                           ] ;
+                                           skos:prefLabel "ANAKINME"@en .
+
+
+###  http://emmo.info/emmo#EMMO_83ad10b6_459f_4e81_a147_40899acb2927
+:EMMO_83ad10b6_459f_4e81_a147_40899acb2927 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_28cb6cce_8e1a_4caa_8d20_87ffc3a4c34d ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_b9a8e7cd_2003_4549_bf74_ae46652aeb67 ;
+                                                             owl:someValuesFrom :EMMO_4cb59b3a_a05d_4969_b231_d3f32225b85c
+                                                           ] ;
+                                           rdfs:comment "DZP Double zeta STO polarized basis." ;
+                                           skos:prefLabel "DoubleZetaPolarized"@en .
+
+
+###  http://emmo.info/emmo#EMMO_89049fbf_8fc0_4633_a710_2b9b74112895
+:EMMO_89049fbf_8fc0_4633_a710_2b9b74112895 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_790d1d4e_15cc_4e55_b5da_9e2efceecd4f ;
+                                           skos:prefLabel "CalculateFragments"@en .
+
+
+###  http://emmo.info/emmo#EMMO_8ad7d7e1_99ab_4f69_acef_c65a5109d0da
+:EMMO_8ad7d7e1_99ab_4f69_acef_c65a5109d0da rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_b1593b2b_09fb_4e8e_9359_ac65b452738d ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_23b579e1_8088_45b5_9975_064014026c42 ;
+                                                             owl:hasValue "TZP"
+                                                           ] ;
+                                           skos:prefLabel "TZP"@en .
+
+
+###  http://emmo.info/emmo#EMMO_8b7cb258_a0b5_4177_b302_228055695ec1
+:EMMO_8b7cb258_a0b5_4177_b302_228055695ec1 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_d6147403_0eb2_4efa_ac1c_d11ceccf5cc4 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_0ec50973_7903_4809_abd7_414bb27ee186 ;
+                                                             owl:someValuesFrom :EMMO_8bb5b98e_aede_4dfa_83ac_2fb100992cce
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_129e88a6_9847_4e2e_b26d_c7f39cc2fc62 ;
+                                                             owl:someValuesFrom :EMMO_a39d8cf5_df30_40e1_964b_4343af8738ac
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_129e88a6_9847_4e2e_b26d_c7f39cc2fc62 ;
+                                                             owl:someValuesFrom :EMMO_affe07e4_e9bc_4852_86c6_69e26182a17f
+                                                           ] ;
+                                           rdfs:comment "PESScan, chain of WavefuncionOptimizations along a reaction coordinate." ;
+                                           skos:prefLabel "PotentialEnergySurfaceScan"@en .
+
+
+###  http://emmo.info/emmo#EMMO_8bb5b98e_aede_4dfa_83ac_2fb100992cce
+:EMMO_8bb5b98e_aede_4dfa_83ac_2fb100992cce rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2 ,
+                                                           :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ;
+                                           skos:prefLabel "TotalEnergy"@en .
+
+
+###  http://emmo.info/emmo#EMMO_8e6eef64_decb_40b1_b324_9ef81b98f425
+:EMMO_8e6eef64_decb_40b1_b324_9ef81b98f425 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_ec3f2da5_d51d_4dde_9a2a_550003f9e84a ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_23b579e1_8088_45b5_9975_064014026c42 ;
+                                                             owl:hasValue "PBE"^^xsd:string
+                                                           ] ;
+                                           skos:prefLabel "PBE"@en .
+
+
+###  http://emmo.info/emmo#EMMO_8ecc21ad_5d42_4e6b_8c36_c95c666d6c1a
+:EMMO_8ecc21ad_5d42_4e6b_8c36_c95c666d6c1a rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_8681074a_e225_4e38_b586_e85b0f43ce38 ,
+                                                           :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_24c71baf_6db6_48b9_86c8_8c70cf36db0c ;
+                                                             owl:someValuesFrom :EMMO_6eca09be_17e9_445e_abc9_000aa61b7a11
+                                                           ] ;
+                                           skos:prefLabel "ElectronicModellingSoftware"@en .
+
+
+###  http://emmo.info/emmo#EMMO_9022539d_3eda_4cf1_ba10_a93bb946d9b6
+:EMMO_9022539d_3eda_4cf1_ba10_a93bb946d9b6 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_3b645426_e74c_4847_99f0_fdc293f03e32 ;
+                                           skos:prefLabel "AMSElectronicModellingConcept"@en .
+
+
+###  http://emmo.info/emmo#EMMO_95e2c235_8088_4dd9_bfd5_5002a4eec27c
+:EMMO_95e2c235_8088_4dd9_bfd5_5002a4eec27c rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_b224f193_874a_4381_ae83_0e8f35f86f81 ;
+                                           skos:prefLabel "GaussianBasisSet"@en .
+
+
+###  http://emmo.info/emmo#EMMO_9a8653f2_686e_4841_b8ca_fe935f4e8102
+:EMMO_9a8653f2_686e_4841_b8ca_fe935f4e8102 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_0f542146_06f0_4387_b4d2_6e20cff83fac ,
+                                                           :EMMO_8ecc21ad_5d42_4e6b_8c36_c95c666d6c1a ;
+                                           skos:prefLabel "QE"@en .
+
+
+###  http://emmo.info/emmo#EMMO_9c0fae30_1ebf_4667_acbb_6df9b0295244
+:EMMO_9c0fae30_1ebf_4667_acbb_6df9b0295244 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_6eca09be_17e9_445e_abc9_000aa61b7a11 ;
+                                           skos:prefLabel "DFTB"@en .
+
+
+###  http://emmo.info/emmo#EMMO_9c7765c6_f41a_4479_bec5_dab2d81e9bc2
+:EMMO_9c7765c6_f41a_4479_bec5_dab2d81e9bc2 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_9022539d_3eda_4cf1_ba10_a93bb946d9b6 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_23b579e1_8088_45b5_9975_064014026c42 ;
+                                                             owl:someValuesFrom xsd:string
+                                                           ] ;
+                                           skos:prefLabel "ReferenceRegion"@en .
+
+
+###  http://emmo.info/emmo#EMMO_a328963a_2d7c_4ac0_bfde_799e00be3541
+:EMMO_a328963a_2d7c_4ac0_bfde_799e00be3541 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_79751276_b2d0_4e2f_bbd4_99d412f43d55 ,
+                                                           :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ;
+                                           skos:prefLabel "Coverage"@en .
+
+
+###  http://emmo.info/emmo#EMMO_a39d8cf5_df30_40e1_964b_4343af8738ac
+:EMMO_a39d8cf5_df30_40e1_964b_4343af8738ac rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ,
+                                                           :EMMO_abf7efbe_6b04_41b8_8326_4dd0f6be753e ,
+                                                           :EMMO_c74da218_9147_4f03_92d1_8894abca55f3 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_f68030be_94b8_4c61_a161_886468558054 ;
+                                                             owl:someValuesFrom :EMMO_a821d835_6e6f_4c56_8e64_fb9242e29597
+                                                           ] ;
+                                           rdfs:comment "Describes the three-dimensional arrangement of the atoms that constitute a molecule." ;
+                                           skos:prefLabel "MolecularGeometry"@en .
+
+
+###  http://emmo.info/emmo#EMMO_a523657b_c493_4ec5_aef5_47ea95c89eea
+:EMMO_a523657b_c493_4ec5_aef5_47ea95c89eea rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_f2c607b9_d5fd_41ff_8615_1aa45e597c3f ;
+                                           skos:prefLabel "BindingSites"@en .
+
+
+###  http://emmo.info/emmo#EMMO_a7a37049_dc50_4b58_a93a_8d857a4c9382
+:EMMO_a7a37049_dc50_4b58_a93a_8d857a4c9382 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2 ,
+                                                           :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ;
+                                           skos:prefLabel "ActivationEnergy"@en .
+
+
+###  http://emmo.info/emmo#EMMO_a821d835_6e6f_4c56_8e64_fb9242e29597
+:EMMO_a821d835_6e6f_4c56_8e64_fb9242e29597 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_89a0c87c_0804_4013_937a_6fe234d9499c ,
+                                                           :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe ;
+                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass :EMMO_44da6d75_54a4_4aa8_bd3a_156f6e9abb8e
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe ;
+                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass :EMMO_4f40def1_3cd7_4067_9596_541e9a5134cf
+                                                           ] ;
+                                           skos:prefLabel "AtomEntity"@en .
+
+
+###  http://emmo.info/emmo#EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b
+:EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_c1a8eb86_05e2_4b14_bf82_02d9d507eb50 ;
+                                           skos:prefLabel "ReaxproElectronicAtomisticModelling"@en .
+
+
+###  http://emmo.info/emmo#EMMO_ac0ad86f_75b7_4911_8f3e_3dc545882c16
+:EMMO_ac0ad86f_75b7_4911_8f3e_3dc545882c16 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_b1593b2b_09fb_4e8e_9359_ac65b452738d ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_23b579e1_8088_45b5_9975_064014026c42 ;
+                                                             owl:hasValue "TZ2P"
+                                                           ] ;
+                                           skos:prefLabel "TZ2P"@en .
+
+
+###  http://emmo.info/emmo#EMMO_af77203e_6fcd_4257_bcce_5d71ac1ff2e4
+:EMMO_af77203e_6fcd_4257_bcce_5d71ac1ff2e4 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_c7100a8c_407a_4dad_8881_827b76851ef8 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_129e88a6_9847_4e2e_b26d_c7f39cc2fc62 ;
+                                                             owl:someValuesFrom :EMMO_a39d8cf5_df30_40e1_964b_4343af8738ac
+                                                           ] ;
+                                           skos:prefLabel "WavefunctionOptimizationIII"@en .
+
+
+###  http://emmo.info/emmo#EMMO_b1593b2b_09fb_4e8e_9359_ac65b452738d
+:EMMO_b1593b2b_09fb_4e8e_9359_ac65b452738d rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_3b645426_e74c_4847_99f0_fdc293f03e32 ;
+                                           skos:prefLabel "BasisSetIdentifierString"@en .
+
+
+###  http://emmo.info/emmo#EMMO_b224f193_874a_4381_ae83_0e8f35f86f81
+:EMMO_b224f193_874a_4381_ae83_0e8f35f86f81 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ,
+                                                           :EMMO_e5438930_04e7_4d42_ade5_3700d4a52ab7 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_b9a8e7cd_2003_4549_bf74_ae46652aeb67 ;
+                                                             owl:allValuesFrom :EMMO_b1593b2b_09fb_4e8e_9359_ac65b452738d
+                                                           ] ;
+                                           skos:prefLabel "BasisSet"@en .
+
+
+###  http://emmo.info/emmo#EMMO_b276dfa9_7408_4ee1_88a6_ad9917b32652
+:EMMO_b276dfa9_7408_4ee1_88a6_ad9917b32652 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_ed03c345_bcfa_4f84_a10a_2e03902049b5 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_b9a8e7cd_2003_4549_bf74_ae46652aeb67 ;
+                                                             owl:someValuesFrom :EMMO_22a775b4_2a60_423b_aab6_b90703e13b04
+                                                           ] ;
+                                           rdfs:comment """B3LYP or BeckeBLYP exchange and correlation funtional. It refers to the Stevens et al. implementation.
+P. J. Stephens, F. J. Devlin, C. F. Chablowski, and M. J. Frisch, J. Phys. Chem. 98, 11623 (1994).""" ;
+                                           skos:prefLabel "Becke3ParameterLeeYangParr"@en .
+
+
+###  http://emmo.info/emmo#EMMO_b34bb8b9_af3d_4f51_bae7_be016327bf56
+:EMMO_b34bb8b9_af3d_4f51_bae7_be016327bf56 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_ec3f2da5_d51d_4dde_9a2a_550003f9e84a ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_23b579e1_8088_45b5_9975_064014026c42 ;
+                                                             owl:hasValue "VWN"
+                                                           ] ;
+                                           skos:prefLabel "VWN"@en .
+
+
+###  http://emmo.info/emmo#EMMO_bdc86aa4_3393_4036_89da_6acf45313fab
+:EMMO_bdc86aa4_3393_4036_89da_6acf45313fab rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_ed03c345_bcfa_4f84_a10a_2e03902049b5 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_b9a8e7cd_2003_4549_bf74_ae46652aeb67 ;
+                                                             owl:someValuesFrom :EMMO_8e6eef64_decb_40b1_b324_9ef81b98f425
+                                                           ] ;
+                                           rdfs:comment """Perdew–Burke–Ernzerhof (PBE) exchange and correlation functional.
+J. P. Perdew, K. Burke, and M. Ernzerhof, Phys. Rev. Lett. 77, 3865 (1996). 
+J. P. Perdew, K. Burke, and M. Ernzerhof, Phys. Rev. Lett. 78, 1396 (1997).""" ;
+                                           skos:prefLabel "PerdewBurkeErnzerhof"@en .
+
+
+###  http://emmo.info/emmo#EMMO_c155bd8a_b044_4760_bdce_4a5f151cd9f6
+:EMMO_c155bd8a_b044_4760_bdce_4a5f151cd9f6 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_9022539d_3eda_4cf1_ba10_a93bb946d9b6 ,
+                                                           :EMMO_f8bd64d5_5d3e_4ad4_a46e_c30714fecb7f ;
+                                           skos:prefLabel "NumberOfExplorers"@en .
+
+
+###  http://emmo.info/emmo#EMMO_c1a8eb86_05e2_4b14_bf82_02d9d507eb50
+:EMMO_c1a8eb86_05e2_4b14_bf82_02d9d507eb50 rdf:type owl:Class .
+
+
+###  http://emmo.info/emmo#EMMO_c7100a8c_407a_4dad_8881_827b76851ef8
+:EMMO_c7100a8c_407a_4dad_8881_827b76851ef8 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_62297243_ec84_47ba_8669_7b5ee7f548e5 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_0ec50973_7903_4809_abd7_414bb27ee186 ;
+                                                             owl:someValuesFrom :EMMO_5ec73879_62d7_492b_a6c7_935e3daa8f47
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_129e88a6_9847_4e2e_b26d_c7f39cc2fc62 ;
+                                                             owl:someValuesFrom :EMMO_affe07e4_e9bc_4852_86c6_69e26182a17f
+                                                           ] ;
+                                           rdfs:comment "Optimization of the expansion coefficients that lead to the lower energy value of the electronic energy." ;
+                                           skos:prefLabel "WavefunctionOptimization"@en .
+
+
+###  http://emmo.info/emmo#EMMO_c7d613a7_e8fe_4783_a0d3_3ae953ea018f
+:EMMO_c7d613a7_e8fe_4783_a0d3_3ae953ea018f rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ,
+                                                           :EMMO_e5438930_04e7_4d42_ade5_3700d4a52ab7 ;
+                                           skos:prefLabel "ForceField"@en .
+
+
+###  http://emmo.info/emmo#EMMO_c9ceee36_e9c5_41bf_8fb2_4e7838dbac75
+:EMMO_c9ceee36_e9c5_41bf_8fb2_4e7838dbac75 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_0f542146_06f0_4387_b4d2_6e20cff83fac ,
+                                                           :EMMO_8ecc21ad_5d42_4e6b_8c36_c95c666d6c1a ;
+                                           rdfs:comment "Driver from SCM https://www.scm.com/" ;
+                                           skos:prefLabel "AMS"@en .
+
+
+###  http://emmo.info/emmo#EMMO_ca5e0950_e2a0_4048_881e_838be8b36548
+:EMMO_ca5e0950_e2a0_4048_881e_838be8b36548 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2 ,
+                                                           :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ;
+                                           rdfs:comment "In the Kohn-Sham DFT method, the exchange and correlation energy term  include the deviations of the real kinetic functional from the reference system, and the corrections to electron classical self-interaction." ;
+                                           skos:prefLabel "ExchangeCorrelationEnergy"@en .
+
+
+###  http://emmo.info/emmo#EMMO_d3977dc4_68f4_4a5a_85e3_ae841255c3ee
+:EMMO_d3977dc4_68f4_4a5a_85e3_ae841255c3ee rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_d6147403_0eb2_4efa_ac1c_d11ceccf5cc4 ;
+                                           skos:prefLabel "LandscapeRefinement"@en .
+
+
+###  http://emmo.info/emmo#EMMO_d5e2b3b4_3ad3_4e3e_8693_c5e3e1f53ccb
+:EMMO_d5e2b3b4_3ad3_4e3e_8693_c5e3e1f53ccb rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_ed03c345_bcfa_4f84_a10a_2e03902049b5 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_b9a8e7cd_2003_4549_bf74_ae46652aeb67 ;
+                                                             owl:someValuesFrom :EMMO_b34bb8b9_af3d_4f51_bae7_be016327bf56
+                                                           ] ;
+                                           rdfs:comment "Vosko, Wilk and Nusair ExchangeCorrelationFunctional based on the Local Density Approximation (S. J. Vosko, L. Wilk, M. Nusair, Can. J. Phys. 1980, 58, 1200). Most quantum package implementations use either formula III or V of the paper." ;
+                                           skos:prefLabel "VoskoWilkNusair"@en .
+
+
+###  http://emmo.info/emmo#EMMO_d5ed318d_d9a2_4489_b929_3583e0c21d1d
+:EMMO_d5ed318d_d9a2_4489_b929_3583e0c21d1d rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_79751276_b2d0_4e2f_bbd4_99d412f43d55 ,
+                                                           :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ;
+                                           skos:prefLabel "Denticity"@en .
+
+
+###  http://emmo.info/emmo#EMMO_d6147403_0eb2_4efa_ac1c_d11ceccf5cc4
+:EMMO_d6147403_0eb2_4efa_ac1c_d11ceccf5cc4 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_2b7aa3f3_2e3d_447b_8aeb_342a7c42dd7d ;
+                                           skos:prefLabel "PotentialEnergySurfaceExploration"@en .
+
+
+###  http://emmo.info/emmo#EMMO_d6df3642_5ef2_49fb_9eeb_26f34a6ef380
+:EMMO_d6df3642_5ef2_49fb_9eeb_26f34a6ef380 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_2b7aa3f3_2e3d_447b_8aeb_342a7c42dd7d ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_0ec50973_7903_4809_abd7_414bb27ee186 ;
+                                                             owl:someValuesFrom :EMMO_5ec73879_62d7_492b_a6c7_935e3daa8f47
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_129e88a6_9847_4e2e_b26d_c7f39cc2fc62 ;
+                                                             owl:someValuesFrom :EMMO_affe07e4_e9bc_4852_86c6_69e26182a17f
+                                                           ] ;
+                                           rdfs:comment "Optimization of the atomic coordinates." ;
+                                           skos:prefLabel "GeometryOptimization"@en .
+
+
+###  http://emmo.info/emmo#EMMO_da9b1913_a685_441f_80de_44a550841416
+:EMMO_da9b1913_a685_441f_80de_44a550841416 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_ec3f2da5_d51d_4dde_9a2a_550003f9e84a ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_23b579e1_8088_45b5_9975_064014026c42 ;
+                                                             owl:hasValue "LDA"
+                                                           ] ;
+                                           skos:prefLabel "LDA"@en .
+
+
+###  http://emmo.info/emmo#EMMO_dae2b603_c16d_4985_9efd_954874d753a7
+:EMMO_dae2b603_c16d_4985_9efd_954874d753a7 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_12a9e8ca_96e2_47aa_9c00_82087af26a45 ;
+                                           skos:prefLabel "ElectronicDensityCutoff"@en .
+
+
+###  http://emmo.info/emmo#EMMO_db61a1ff_2cdf_472e_834f_6122dd5da021
+:EMMO_db61a1ff_2cdf_472e_834f_6122dd5da021 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_28cb6cce_8e1a_4caa_8d20_87ffc3a4c34d ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_b9a8e7cd_2003_4549_bf74_ae46652aeb67 ;
+                                                             owl:someValuesFrom :EMMO_8ad7d7e1_99ab_4f69_acef_c65a5109d0da
+                                                           ] ;
+                                           rdfs:comment "Triple-zeta STO basis sets with one polarization function." ;
+                                           skos:prefLabel "TripleZetaPolarized"@en .
+
+
+###  http://emmo.info/emmo#EMMO_de4ef9d3_53b9_4472_8131_7ea9e84360f3
+:EMMO_de4ef9d3_53b9_4472_8131_7ea9e84360f3 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_79751276_b2d0_4e2f_bbd4_99d412f43d55 ,
+                                                           :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ;
+                                           skos:prefLabel "VibrationalFrequency"@en .
+
+
+###  http://emmo.info/emmo#EMMO_e16512ea_7c51_4e7e_bd35_ca3a74f9c7f4
+:EMMO_e16512ea_7c51_4e7e_bd35_ca3a74f9c7f4 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_9022539d_3eda_4cf1_ba10_a93bb946d9b6 ;
+                                           skos:prefLabel "StructureComparison"@en .
+
+
+###  http://emmo.info/emmo#EMMO_e23b2800_3237_42b0_a273_1a2efebef3aa
+:EMMO_e23b2800_3237_42b0_a273_1a2efebef3aa rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_b1593b2b_09fb_4e8e_9359_ac65b452738d ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_23b579e1_8088_45b5_9975_064014026c42 ;
+                                                             owl:hasValue "SZ"
+                                                           ] ;
+                                           skos:prefLabel "SZ"@en .
+
+
+###  http://emmo.info/emmo#EMMO_e24de70b_e48b_4795_8e73_857bffbdaca8
+:EMMO_e24de70b_e48b_4795_8e73_857bffbdaca8 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_79751276_b2d0_4e2f_bbd4_99d412f43d55 ,
+                                                           :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ;
+                                           skos:prefLabel "TurnoverFrequency"@en .
+
+
+###  http://emmo.info/emmo#EMMO_e2551665_75f0_4f9e_b07e_1cf8643b3ab4
+:EMMO_e2551665_75f0_4f9e_b07e_1cf8643b3ab4 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_2b7aa3f3_2e3d_447b_8aeb_342a7c42dd7d ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_0ec50973_7903_4809_abd7_414bb27ee186 ;
+                                                             owl:someValuesFrom :EMMO_25f8fa70_d036_472e_b157_32fb96de7ca3
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_0ec50973_7903_4809_abd7_414bb27ee186 ;
+                                                             owl:someValuesFrom :EMMO_5ec73879_62d7_492b_a6c7_935e3daa8f47
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_129e88a6_9847_4e2e_b26d_c7f39cc2fc62 ;
+                                                             owl:someValuesFrom :EMMO_affe07e4_e9bc_4852_86c6_69e26182a17f
+                                                           ] ;
+                                           rdfs:comment "Search of a StationaryPoint, e.g. TransitionState." ;
+                                           skos:prefLabel "StationaryPointCalculation"@en .
+
+
+###  http://emmo.info/emmo#EMMO_e34a0117_065d_4a45_8e6e_28e35143836a
+:EMMO_e34a0117_065d_4a45_8e6e_28e35143836a rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_1925adbe_e070_4006_93d5_e00e7eed23be ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_23b579e1_8088_45b5_9975_064014026c42 ;
+                                                             owl:hasValue "CHONSFPtClNi"
+                                                           ] ;
+                                           skos:prefLabel "CHONSFPtClNi"@en .
+
+
+###  http://emmo.info/emmo#EMMO_e362df3b_b5f0_4726_93a3_8735efa72372
+:EMMO_e362df3b_b5f0_4726_93a3_8735efa72372 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_79751276_b2d0_4e2f_bbd4_99d412f43d55 ,
+                                                           :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ;
+                                           skos:prefLabel "NormalMode"@en .
+
+
+###  http://emmo.info/emmo#EMMO_e3d6979e_4561_40c6_af6c_c1356984b2f3
+:EMMO_e3d6979e_4561_40c6_af6c_c1356984b2f3 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_12a9e8ca_96e2_47aa_9c00_82087af26a45 ;
+                                           skos:prefLabel "ForceCutoff"@en .
+
+
+###  http://emmo.info/emmo#EMMO_e917d2f3_c22b_47f1_aace_ca9f5cb989ec
+:EMMO_e917d2f3_c22b_47f1_aace_ca9f5cb989ec rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_d6147403_0eb2_4efa_ac1c_d11ceccf5cc4 ;
+                                           skos:prefLabel "SaddleSearch"@en .
+
+
+###  http://emmo.info/emmo#EMMO_ec3f2da5_d51d_4dde_9a2a_550003f9e84a
+:EMMO_ec3f2da5_d51d_4dde_9a2a_550003f9e84a rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_3b645426_e74c_4847_99f0_fdc293f03e32 ;
+                                           skos:prefLabel "ExchangeCorrelationFunctionalIdentifierString"@en .
+
+
+###  http://emmo.info/emmo#EMMO_ec46d31f_df57_4ea2_884b_b9b7ca8342b0
+:EMMO_ec46d31f_df57_4ea2_884b_b9b7ca8342b0 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_3b645426_e74c_4847_99f0_fdc293f03e32 ;
+                                           skos:prefLabel "EnergyLandscape"@en .
+
+
+###  http://emmo.info/emmo#EMMO_ed03c345_bcfa_4f84_a10a_2e03902049b5
+:EMMO_ed03c345_bcfa_4f84_a10a_2e03902049b5 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_a94e76a8_63ca_4fca_a22e_6abd56231a0b ,
+                                                           :EMMO_e5438930_04e7_4d42_ade5_3700d4a52ab7 ;
+                                           skos:prefLabel "ExchangeCorrelationFunctional"@en .
+
+
+###  http://emmo.info/emmo#EMMO_f03c0655_9697_4c6b_88ee_76df46779b32
+:EMMO_f03c0655_9697_4c6b_88ee_76df46779b32 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_9022539d_3eda_4cf1_ba10_a93bb946d9b6 ,
+                                                           :EMMO_f658c301_ce93_46cf_9639_4eace2c5d1d5 ;
+                                           skos:prefLabel "NeighborCutoff"@en .
+
+
+###  http://emmo.info/emmo#EMMO_f0875ee1_aafd_4350_aa3f_3096c5e317cf
+:EMMO_f0875ee1_aafd_4350_aa3f_3096c5e317cf rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_28cb6cce_8e1a_4caa_8d20_87ffc3a4c34d ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_b9a8e7cd_2003_4549_bf74_ae46652aeb67 ;
+                                                             owl:someValuesFrom :EMMO_ac0ad86f_75b7_4911_8f3e_3dc545882c16
+                                                           ] ;
+                                           rdfs:comment "Triple-zeta STO basis with two polarization functions." ;
+                                           skos:prefLabel "TripleZetaTwoPolarized"@en .
+
+
+###  http://emmo.info/emmo#EMMO_f91e14da_23be_4b58_8e14_ff40371306a7
+:EMMO_f91e14da_23be_4b58_8e14_ff40371306a7 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_9022539d_3eda_4cf1_ba10_a93bb946d9b6 ,
+                                                           :EMMO_f8bd64d5_5d3e_4ad4_a46e_c30714fecb7f ;
+                                           skos:prefLabel "NumberOfExpeditions"@en .
+
+
+###  http://emmo.info/emmo#EMMO_fd6ce1ae_f92a_4d38_b5d3_ed8f3c77f615
+:EMMO_fd6ce1ae_f92a_4d38_b5d3_ed8f3c77f615 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_1925adbe_e070_4006_93d5_e00e7eed23be ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_23b579e1_8088_45b5_9975_064014026c42 ;
+                                                             owl:hasValue "AMBER"
+                                                           ] ;
+                                           skos:prefLabel "AMBER"@en .
+
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

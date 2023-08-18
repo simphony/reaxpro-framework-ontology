@@ -1,0 +1,141 @@
+@prefix : <http://emmo.info/emmo#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://emmo.info/emmo/application/reaxpro-mesoscopic-model> .
+
+<http://emmo.info/emmo/application/reaxpro-mesoscopic-model> rdf:type owl:Ontology ;
+                                                              owl:imports <http://emmo.info/emmo/application/reaxpro-core> ;
+                                                              dcterms:contributor "Fraunhofer IWM" ;
+                                                              dcterms:abstract "The mesoscopic modelling module of ReaxPro ontology"@en ;
+                                                              dcterms:contributor "Netherlands eScience Center" ;
+                                                              dcterms:creator "Pablo Lopez-Tarifa" ,
+                                                                              "Joana Francisco Morgado" .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://emmo.info/emmo#EMMO_01f0898a_55e3_4699_a7f3_8d534be95e50
+:EMMO_01f0898a_55e3_4699_a7f3_8d534be95e50 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_5a72c6eb_cbff_45c6_a10c_8f3a7f9adb19 ;
+                                           skos:prefLabel "ZacrosModellingConcept"@en .
+
+
+###  http://emmo.info/emmo#EMMO_066804c2_c648_4fd0_a328_ad605d7a6901
+:EMMO_066804c2_c648_4fd0_a328_ad605d7a6901 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_01f0898a_55e3_4699_a7f3_8d534be95e50 ,
+                                                           :EMMO_54dc83cb_06e1_4739_9e45_bc09cead7f48 ;
+                                           skos:prefLabel "EventReport"@en .
+
+
+###  http://emmo.info/emmo#EMMO_45f52b19_2e71_411f_a3e0_6ea38b3ba7dd
+:EMMO_45f52b19_2e71_411f_a3e0_6ea38b3ba7dd rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_01f0898a_55e3_4699_a7f3_8d534be95e50 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_17e27c22_37e1_468c_9dd7_95e137f73e7f ;
+                                                             owl:someValuesFrom :EMMO_bccb99f0_3fe5_48ba_b640_37c40db3c237
+                                                           ] ;
+                                           skos:prefLabel "ClusterExpansion"@en .
+
+
+###  http://emmo.info/emmo#EMMO_48e06d05_26e0_42e6_9e16_19a2ff42923c
+:EMMO_48e06d05_26e0_42e6_9e16_19a2ff42923c rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_31ec09ba_1713_42cb_83c7_b38bf6f9ced2 ;
+                                           skos:prefLabel "ClusterEnergy"@en .
+
+
+###  http://emmo.info/emmo#EMMO_845817b2_b28b_4813_9059_d77e1eb60706
+:EMMO_845817b2_b28b_4813_9059_d77e1eb60706 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_f2c607b9_d5fd_41ff_8615_1aa45e597c3f ;
+                                           skos:prefLabel "AdaptiveDesignProcedure"@en .
+
+
+###  http://emmo.info/emmo#EMMO_8972a44e_1184_4cc6_8dd4_1b2082452372
+:EMMO_8972a44e_1184_4cc6_8dd4_1b2082452372 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_790d1d4e_15cc_4e55_b5da_9e2efceecd4f ;
+                                           skos:prefLabel "MesoscopicCalculation"@en .
+
+
+###  http://emmo.info/emmo#EMMO_9757f95b_ca3c_4818_aa2b_bafc2403f9d9
+:EMMO_9757f95b_ca3c_4818_aa2b_bafc2403f9d9 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_01f0898a_55e3_4699_a7f3_8d534be95e50 ,
+                                                           :EMMO_50ea1ec5_f157_41b0_b46b_a9032f17ca10 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_23b579e1_8088_45b5_9975_064014026c42 ;
+                                                             owl:someValuesFrom xsd:string
+                                                           ] ;
+                                           skos:prefLabel "ProcessStatistics"@en .
+
+
+###  http://emmo.info/emmo#EMMO_a5797c47_4e3f_49f1_a131_f42682ca079e
+:EMMO_a5797c47_4e3f_49f1_a131_f42682ca079e rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_01f0898a_55e3_4699_a7f3_8d534be95e50 ,
+                                                           :EMMO_50ea1ec5_f157_41b0_b46b_a9032f17ca10 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_23b579e1_8088_45b5_9975_064014026c42 ;
+                                                             owl:someValuesFrom xsd:string
+                                                           ] ;
+                                           skos:prefLabel "SpeciesNumbers"@en .
+
+
+###  http://emmo.info/emmo#EMMO_af684c69_53dd_4a5b_b102_97b12cd94b9b
+:EMMO_af684c69_53dd_4a5b_b102_97b12cd94b9b rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_01f0898a_55e3_4699_a7f3_8d534be95e50 ;
+                                           skos:prefLabel "Neighboring"@en .
+
+
+###  http://emmo.info/emmo#EMMO_b1324e43_6ea0_4d7b_93b7_854ebe823ba3
+:EMMO_b1324e43_6ea0_4d7b_93b7_854ebe823ba3 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_b6ab961d_c6c1_4206_943f_16aa227e15de ;
+                                           rdfs:comment "Kinectic Monte Carlo code https://zacros.org/" ;
+                                           skos:prefLabel "Zacros"@en .
+
+
+###  http://emmo.info/emmo#EMMO_b4e59732_d950_4bcc_9a1b_d94a0ac69c79
+:EMMO_b4e59732_d950_4bcc_9a1b_d94a0ac69c79 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_01f0898a_55e3_4699_a7f3_8d534be95e50 ,
+                                                           :EMMO_50ea1ec5_f157_41b0_b46b_a9032f17ca10 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_23b579e1_8088_45b5_9975_064014026c42 ;
+                                                             owl:someValuesFrom xsd:string
+                                                           ] ;
+                                           skos:prefLabel "Snapshots"@en .
+
+
+###  http://emmo.info/emmo#EMMO_b6ab961d_c6c1_4206_943f_16aa227e15de
+:EMMO_b6ab961d_c6c1_4206_943f_16aa227e15de rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_8681074a_e225_4e38_b586_e85b0f43ce38 ;
+                                           skos:prefLabel "MesoscopicModellingSoftware"@en .
+
+
+###  http://emmo.info/emmo#EMMO_bccb99f0_3fe5_48ba_b640_37c40db3c237
+:EMMO_bccb99f0_3fe5_48ba_b640_37c40db3c237 rdf:type owl:Class ;
+                                           rdfs:subClassOf :EMMO_01f0898a_55e3_4699_a7f3_8d534be95e50 ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :EMMO_b2282816_b7a3_44c6_b2cb_3feff1ceb7fe ;
+                                                             owl:someValuesFrom :EMMO_74c61c38_47d3_4354_9334_67e09e6c9ea2
+                                                           ] ;
+                                           skos:prefLabel "LatticeState"@en .
+
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
